@@ -33,64 +33,6 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }
   }
-/*
-  Future<void> sendEmailDirectly({
-    required List<String> recipients,
-    required String subject,
-    required String body,
-    required String imagePath,
-  }) async {
-    setState(() {
-      isLoading = true;
-    });
-    final smtpServer = gmail(
-      'academy.qb@gmail.com',
-      "xbefiedbeeodyofl",
-    );
-
-    final attachmentFile = File(imagePath);
-    final attachmentSize = await attachmentFile.length();
-
-    final message = Message()
-      ..from = Address('academy.qb@gmail.com', 'Festival Wishes')
-      ..recipients.addAll(recipients)
-      ..subject = subject
-      ..text = body
-      ..attachments = [
-        FileAttachment(attachmentFile)..location = Location.attachment,
-      ];
-
-    // ✅ Print debug info clearly
-    print('📧 Sending Email...');
-    print('📝 Subject: $subject');
-    print('🗒️ Body: $body');
-    print('👥 Recipients: $recipients');
-    print('📎 Attachment Path: ${attachmentFile.path}');
-    print('📦 Attachment Size: ${attachmentSize ~/ 1024} KB');
-
-    try {
-      final sendReport = await send(message, smtpServer);
-      print('Email sent: ' + sendReport.toString());
-
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Email sent successfully!'),
-        behavior: SnackBarBehavior.floating,
-      ));
-      setState(() {
-        isLoading = false;
-      });
-    } catch (e) {
-      print('Email failed: $e');
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Failed to send email'),
-        behavior: SnackBarBehavior.floating,
-      ));
-      setState(() {
-        isLoading = false;
-      });
-    }
-  }
-*/
 
   Future<void> sendEmailDirectly({
     required List<String> recipients,
